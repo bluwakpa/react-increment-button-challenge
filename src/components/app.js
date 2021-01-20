@@ -8,14 +8,19 @@ export default class App extends React.Component {
             count: 0
         };
     }
-
+    handleButtonClick = () => {
+        const newCount = this.state.count + 1
+        this.setState({
+            count: newCount
+        })
+    }
     render() {
         return (
             <div className="parent">
                 <div className="count">
                     Number of clicks: {this.state.count}
                 </div>
-                <IncrementButton />
+                <IncrementButton onClick={() => this.handleButtonClick} />
             </div>
         );
     }
